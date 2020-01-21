@@ -110,10 +110,37 @@ d3.tsv("data/gapminderDataFiveYear.tsv", function(error, data) {
     svg.append("g")
         .call(d3.axisLeft(y));
 
-    //legend.append("rec")
-    // var legend = svg.append("g")
-    // .attr("class", "legend")
-    // .attr("transform", "translate(50,30)")
-    // .style("font-size", "11px")
-    // .call(d3.legend);
+    var legend = svg.append("g")
+      .attr("class", "legend")
+      // .attr("x", width - 65)
+      // .attr("y", 25)
+      .attr("height", height)
+      .attr("width", width);
+
+    legend.append("rect")
+      .attr("x", width - 50)
+      .attr("y", 20)
+      .attr("width", 15)
+      .attr("height", 15)
+      .style("fill", color("steelblue"));
+
+      legend.append("text")
+        .attr("x", width - 30)
+        .attr("y", 30)
+        .style("font-size", "11px")
+        .text("1952");
+
+      legend.append("rect")
+        .attr("x", width - 50)
+        .attr("y", 36)
+        .attr("width", 15)
+        .attr("height", 15)
+        .style("fill", color("orange"));
+
+      legend.append("text")
+        .attr("x", width - 30)
+        .attr("y", 46)
+        .style("font-size", "11px")
+        .text("2007");
+
 });
